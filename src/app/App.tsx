@@ -17,7 +17,7 @@ const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CampusDataProvider>
         <AppShell>
           <Suspense fallback={<div className="content"><LoadingSkeleton /></div>}>
@@ -38,3 +38,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
